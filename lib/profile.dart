@@ -122,23 +122,26 @@ class ProfilePage extends StatelessWidget {
     );
   }
 
-  Widget buildListTile(BuildContext context, String title, String subtitle, VoidCallback? onTap) {
+  Widget buildListTile(BuildContext context, String title, String subtitle,
+      VoidCallback? onTap) {
     return Card(
       child: ListTile(
         title: Text(title, style: TextStyle(fontWeight: FontWeight.bold)),
         subtitle: Text(subtitle),
         trailing: Icon(Icons.arrow_forward_ios),
-        onTap: onTap ?? () {
-          if (title == 'BANTUAN') {
-            _launchURL();
-          }
-        },
+        onTap: onTap ??
+            () {
+              if (title == 'BANTUAN') {
+                _launchURL();
+              }
+            },
       ),
     );
   }
 
   void _launchURL() async {
-    const url = 'https://www.instagram.com/voltnesia_indobot?igsh=MWF5Z3BsYnZkZXp1eA==';
+    const url =
+        'https://www.instagram.com/voltnesia_indobot?igsh=MWF5Z3BsYnZkZXp1eA==';
     if (await canLaunch(url)) {
       await launch(url);
     } else {

@@ -82,7 +82,10 @@ class _KontrolScreenState extends State<KontrolPage> {
               Text(
                 'KONTROL',
                 textAlign: TextAlign.left,
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.black),
+                style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black),
               ),
               SizedBox(height: 20),
               Text(
@@ -99,7 +102,10 @@ class _KontrolScreenState extends State<KontrolPage> {
                   Expanded(
                     child: Text(
                       'PERINGATAN KONDISI PERANGKAT PINTAR',
-                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black),
+                      style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black),
                       textAlign: TextAlign.left,
                     ),
                   ),
@@ -119,7 +125,10 @@ class _KontrolScreenState extends State<KontrolPage> {
                   Expanded(
                     child: Text(
                       'PENGGUNAAN LISTRIK BERLEBIHAN',
-                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black),
+                      style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black),
                       textAlign: TextAlign.left,
                     ),
                   ),
@@ -136,7 +145,10 @@ class _KontrolScreenState extends State<KontrolPage> {
               Text(
                 'KONTROL BEBAN',
                 textAlign: TextAlign.left,
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black),
+                style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black),
               ),
               SizedBox(height: 10),
               Text(

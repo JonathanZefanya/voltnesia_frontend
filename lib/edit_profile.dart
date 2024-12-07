@@ -58,13 +58,14 @@ class EditProfilePage extends StatelessWidget {
               ),
             ),
             SizedBox(height: 10),
-            buildTextField('EMAIL', 'CUSTOMER', actionButton: TextButton(
-              onPressed: () {},
-              child: Text(
-                'Ganti Email',
-                style: TextStyle(color: Colors.blue),
-              ),
-            )),
+            buildTextField('EMAIL', 'CUSTOMER',
+                actionButton: TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    'Ganti Email',
+                    style: TextStyle(color: Colors.blue),
+                  ),
+                )),
             SizedBox(height: 10),
             buildTextField('ALAMAT', 'CUSTOMER'),
             SizedBox(height: 30),
@@ -82,7 +83,8 @@ class EditProfilePage extends StatelessWidget {
     );
   }
 
-  Widget buildTextField(String label, String hint, {Widget? prefixIcon, Widget? actionButton}) {
+  Widget buildTextField(String label, String hint,
+      {Widget? prefixIcon, Widget? actionButton}) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [

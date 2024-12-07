@@ -38,7 +38,8 @@ class _DaftarPerangkatPageState extends State<DaftarPerangkatPage> {
         );
       } else {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Verifikasi gagal: ${response.data['message']}')),
+          SnackBar(
+              content: Text('Verifikasi gagal: ${response.data['message']}')),
         );
       }
     } catch (e) {

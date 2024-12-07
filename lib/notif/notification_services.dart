@@ -11,16 +11,17 @@ class NotificationApi {
   static Future cancelAllNotification() => _notification.cancelAll();
   static Future cancelNotificationByTag(String tag) =>
       _notification.cancel(0, tag: tag);
-  
+
   static Future<void> init({
     bool initScheduled = false,
   }) async {
     // Android initialization settings
-    const AndroidInitializationSettings initializationSettingsAndroid = 
+    const AndroidInitializationSettings initializationSettingsAndroid =
         AndroidInitializationSettings('@mipmap/ic_launcher');
 
     // Common initialization settings
-    const InitializationSettings initializationSettings = InitializationSettings(
+    const InitializationSettings initializationSettings =
+        InitializationSettings(
       android: initializationSettingsAndroid,
     );
 
@@ -38,7 +39,8 @@ class NotificationApi {
       'Alarm Notifications', // Nama channel
       description: 'This channel is used for alarm notifications.',
       importance: Importance.max,
-      sound: RawResourceAndroidNotificationSound('notification_sound'), // Nama file tanpa ekstensi
+      sound: RawResourceAndroidNotificationSound(
+          'notification_sound'), // Nama file tanpa ekstensi
       playSound: true,
     );
 
@@ -73,7 +75,8 @@ class NotificationApi {
             priority: Priority.high,
             showWhen: false,
             playSound: true,
-            sound: RawResourceAndroidNotificationSound('notification_sound'), // Add custom sound
+            sound: RawResourceAndroidNotificationSound(
+                'notification_sound'), // Add custom sound
           ),
         ),
         payload: payload,
@@ -99,7 +102,8 @@ class NotificationApi {
           importance: Importance.max,
           priority: Priority.high,
           playSound: true,
-          sound: RawResourceAndroidNotificationSound('notification_sound'), // Nama file suara tanpa ekstensi
+          sound: RawResourceAndroidNotificationSound(
+              'notification_sound'), // Nama file suara tanpa ekstensi
         ),
       ),
       androidAllowWhileIdle: true,

@@ -13,43 +13,42 @@ class _LoginPageState extends State<LoginPage> {
   final TextEditingController _passwordController = TextEditingController();
 
   void _login() async {
-  final email = _emailController.text.trim();
-  final password = _passwordController.text.trim();
+    final email = _emailController.text.trim();
+    final password = _passwordController.text.trim();
 
-  if (email.isEmpty || password.isEmpty) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('Email atau password tidak boleh kosong')),
-    );
-    return;
-  }
-
-  final dio = Dio();
-  try {
-    final response = await dio.post(
-      'http://voltnesia.msibiot.com:8000/auth/login',
-      data: {
-        'email': email,
-        'password': password,
-      },
-    );
-
-    if (response.statusCode == 200) {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => HomePage()),
-      );
-    } else {
+    if (email.isEmpty || password.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Login gagal: ${response.data['message']}')),
+        SnackBar(content: Text('Email atau password tidak boleh kosong')),
+      );
+      return;
+    }
+
+    final dio = Dio();
+    try {
+      final response = await dio.post(
+        'http://voltnesia.msibiot.com:8000/auth/login',
+        data: {
+          'email': email,
+          'password': password,
+        },
+      );
+
+      if (response.statusCode == 200) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => HomePage()),
+        );
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Login gagal: ${response.data['message']}')),
+        );
+      }
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Terjadi kesalahan: $e')),
       );
     }
-  } catch (e) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('Terjadi kesalahan: $e')),
-    );
   }
-}
-
 
   @override
   Widget build(BuildContext context) {

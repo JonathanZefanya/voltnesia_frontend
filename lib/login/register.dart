@@ -47,7 +47,8 @@ class _RegisterPageState extends State<RegisterPage> {
     }
 
     // Jika semua validasi lolos, lanjutkan ke halaman berikutnya
-    Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => HomePage()));
   }
 
   @override
@@ -101,7 +102,8 @@ class _RegisterPageState extends State<RegisterPage> {
                       onTap: () {
                         // Navigasi ke halaman syarat dan ketentuan
                         ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(content: Text('Tampilkan Syarat dan Ketentuan')),
+                          SnackBar(
+                              content: Text('Tampilkan Syarat dan Ketentuan')),
                         );
                       },
                       child: Text(

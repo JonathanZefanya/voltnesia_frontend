@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'daftarPerangkat.dart'; 
+import 'daftarPerangkat.dart';
 
 class Firstpage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFFF15aea2), 
+      backgroundColor: Color(0xFFFF15aea2),
       appBar: AppBar(
         title: Text('Voltnesia Smartmeter'),
-        backgroundColor: Color(0xFFFF15aea2), 
+        backgroundColor: Color(0xFFFF15aea2),
       ),
       body: Center(
         child: Column(
@@ -22,17 +22,26 @@ class Firstpage extends StatelessWidget {
             SizedBox(height: 20),
             Text(
               'Selamat datang',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white),
+              style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white),
             ),
             SizedBox(height: 10),
             Text(
               'VOLTNESIA',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
+              style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white),
             ),
             SizedBox(height: 10),
             Text(
               'SMARTMETER',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
+              style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white),
             ),
             SizedBox(height: 20),
             Text(
@@ -57,7 +66,8 @@ class Firstpage extends StatelessWidget {
           );
         },
         backgroundColor: Color(0xFFfff7e8), // Warna tombol
-        child: Icon(Icons.arrow_forward, color: Colors.black), // Warna ikon tombol
+        child:
+            Icon(Icons.arrow_forward, color: Colors.black), // Warna ikon tombol
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );

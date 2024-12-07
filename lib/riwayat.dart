@@ -20,7 +20,8 @@ class _RiwayatPageState extends State<RiwayatPage> {
   Future<void> fetchDataFromAPI() async {
     final dio = Dio();
     try {
-      final response = await dio.get('http://voltnesia.msibiot.com:8000/devices/getall-pzem?page=0&page_size=4');
+      final response = await dio.get(
+          'http://voltnesia.msibiot.com:8000/devices/getall-pzem?page=0&page_size=4');
       final data = response.data;
 
       // Print the raw API response to debug
@@ -153,16 +154,20 @@ class _RiwayatPageState extends State<RiwayatPage> {
                           switch (value.toInt()) {
                             case 0:
                               return Text('SEPT',
-                                  style: TextStyle(color: Colors.indigo.shade900));
+                                  style:
+                                      TextStyle(color: Colors.indigo.shade900));
                             case 1:
                               return Text('OCT',
-                                  style: TextStyle(color: Colors.indigo.shade900));
+                                  style:
+                                      TextStyle(color: Colors.indigo.shade900));
                             case 2:
                               return Text('NOV',
-                                  style: TextStyle(color: Colors.indigo.shade900));
+                                  style:
+                                      TextStyle(color: Colors.indigo.shade900));
                             case 3:
                               return Text('DEC',
-                                  style: TextStyle(color: Colors.indigo.shade900));
+                                  style:
+                                      TextStyle(color: Colors.indigo.shade900));
                             default:
                               return Text('');
                           }

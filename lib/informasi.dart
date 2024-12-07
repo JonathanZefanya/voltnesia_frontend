@@ -35,7 +35,8 @@ class _InformasiPageState extends State<InformasiPage> {
         setState(() {
           suhu = data1['temperature']; // Ambil suhu dari API
           kondisi = data1['condition']; // Ambil kondisi dari API
-          frekuensi = List<double>.from(data2['frequency']); // Ambil frekuensi dari API
+          frekuensi =
+              List<double>.from(data2['frequency']); // Ambil frekuensi dari API
         });
       } else {
         throw Exception('Failed to load data');

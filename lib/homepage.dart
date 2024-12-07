@@ -27,7 +27,8 @@ class _HomePageState extends State<HomePage> {
 
   Future<void> fetchData() async {
     try {
-      final response = await _dio.get('http://voltnesia.msibiot.com:8000/devices?esp_id=testing');
+      final response = await _dio
+          .get('http://voltnesia.msibiot.com:8000/devices?esp_id=testing');
       if (response.statusCode == 200) {
         setState(() {
           biaya = "Rp. ${response.data['biaya']} KW/h";
@@ -52,7 +53,8 @@ class _HomePageState extends State<HomePage> {
           builder: (context) {
             return TextButton(
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => ProfilePage()));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ProfilePage()));
               },
               child: Text(
                 'Profile',
@@ -81,11 +83,17 @@ class _HomePageState extends State<HomePage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Expanded(child: _buildInfoCard('DAYA', 'Periode : Desember', daya)),
+                  Expanded(
+                      child:
+                          _buildInfoCard('DAYA', 'Periode : Desember', daya)),
                   SizedBox(width: 2),
-                  Expanded(child: _buildInfoCard('ARUS', 'Periode : Desember', arus)),
+                  Expanded(
+                      child:
+                          _buildInfoCard('ARUS', 'Periode : Desember', arus)),
                   SizedBox(width: 8),
-                  Expanded(child: _buildInfoCard('TEGANGAN', 'Periode : Desember', tegangan)),
+                  Expanded(
+                      child: _buildInfoCard(
+                          'TEGANGAN', 'Periode : Desember', tegangan)),
                 ],
               ),
               SizedBox(height: 1),
@@ -114,13 +122,16 @@ class _HomePageState extends State<HomePage> {
         onTap: (index) {
           switch (index) {
             case 0:
-              Navigator.push(context, MaterialPageRoute(builder: (context) => RiwayatPage()));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => RiwayatPage()));
               break;
             case 1:
-              Navigator.push(context, MaterialPageRoute(builder: (context) => KontrolPage()));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => KontrolPage()));
               break;
             case 2:
-              Navigator.push(context, MaterialPageRoute(builder: (context) => InformasiPage()));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => InformasiPage()));
               break;
           }
         },
@@ -141,12 +152,18 @@ class _HomePageState extends State<HomePage> {
           children: [
             Text(
               'Biaya bulan ini',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black),
+              style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black),
             ),
             SizedBox(height: 8),
             Text(
               biaya,
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.black),
+              style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black),
             ),
           ],
         ),
@@ -160,7 +177,8 @@ class _HomePageState extends State<HomePage> {
         Expanded(
           child: Text(
             'Pengeluaran kamu belum tinggi\nTerus Pantau Penggunaan Listrik Kamu.',
-            style: TextStyle(fontSize: 18, color: Colors.black, fontWeight: FontWeight.bold),
+            style: TextStyle(
+                fontSize: 18, color: Colors.black, fontWeight: FontWeight.bold),
           ),
         ),
         SizedBox(width: 20),
@@ -185,7 +203,10 @@ class _HomePageState extends State<HomePage> {
           children: [
             Text(
               title,
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black),
+              style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black),
             ),
             SizedBox(height: 10),
             Text(
